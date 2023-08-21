@@ -1,4 +1,4 @@
-# AI-SyntheticFuel
+# AI-Assisted Liquid Synthetic Fuel Design for Fully Sustainable Combustion 
 
 ![image](https://github.com/RodolfosmFreitas/AI-SyntheticFuel/assets/142793854/47f22359-0e89-4803-ba5b-1270d11ddef3)
 
