@@ -8,7 +8,26 @@ Created on Thu Aug 17 15:32:07 2023
 from rdkit import Chem
 import numpy as np
 from mordred import Calculator, descriptors, Autocorrelation, MoeType
+import pandas as pd
 
+def read_descriptors(smiles,fuels):
+    N  = len(smiles)
+    data_ = []
+    for idx in range(N):
+    
+        model = get_descriptors(smi=smiles[idx], ignore_3D=False, name=fuels[idx])
+        data = model.evaluate()
+    
+        # Molecular descriptors 
+        data_.append(data)
+    
+    # Molecular descriptors 
+    descriptors_df = pd.DataFrame(list(data_), index=fuels)
+
+    # Pre-select only the number molecular features calculate for all fuels
+    descriptors_df = descriptors_df.dropna(axis=1, how='any')
+    
+    return descriptors_df
 
 class get_descriptors():#(smi='C', ignore_3D=True, name=None):
     '''
@@ -80,4 +99,4 @@ class get_descriptors():#(smi='C', ignore_3D=True, name=None):
         
         print('Number of Molecular descriptors after removing autocorrelation descriptors', len(result_dict))
         
-        return result_dict , keys
+        return result_dict
