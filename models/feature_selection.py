@@ -1,3 +1,26 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep  4 08:59:47 2023
+
+@author: exy029
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pickle
+from sklearn.feature_selection import SelectKBest, r_regression, mutual_info_regression
+from sklearn.feature_selection import RFE
+from sklearn.model_selection import cross_validate, cross_val_score
+from sklearn.model_selection import RepeatedKFold
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import r2_score
+
+
+def adjust_r2(r2, N, num_features):
+    coef = (N - 1) / (N - num_features - 1) 
+    return 1 - (1 - r2) * coef
+
 # get a list of models to evaluate
 def get_models(model, k):
     models = dict()
@@ -56,3 +79,4 @@ def CrossValidationRFE(model, args, X, y, k):
     plt.savefig(args.save_dir + '/feature_selection.jpg', bbox_inches='tight', dpi=150)
     
     return results, features
+

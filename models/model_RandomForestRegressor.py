@@ -23,6 +23,8 @@ import joblib
 from sklearn.neighbors import KernelDensity
 import probscale
 import scipy.stats as st
+import shap 
+
 
 # Reproducibility
 np.random.seed(0)
@@ -195,6 +197,41 @@ plt.box('True')
 plt.xticks(fontsize=18)
 plt.yticks(fontsize=18)
 plt.savefig(args.save_dir + '/feature_importance_test.jpg', bbox_inches='tight', dpi=150)
+
+# feature importance using shapley values
+explainer = shap.TreeExplainer(model, X_train)
+shap_values = explainer.shap_values(X_train)
+shap_mean  = np.abs(shap_values).mean(0)
+sorted_idx = shap_mean.argsort()
+
+plt.figure(figsize=(8,6), dpi=150)
+plt.barh(np.array(rfe.get_feature_names_out())[sorted_idx],
+         shap_mean[sorted_idx],
+         color='LightBlue')
+plt.ylabel(r'Descriptors', fontsize=18)
+plt.xlabel('SHAP value  \n [Average impact on model output magnitude]', fontsize=18)
+plt.grid('True')
+plt.box('True')
+plt.xticks(fontsize=18)
+plt.yticks(fontsize=18)
+plt.savefig(args.save_dir + '/shap_feature_importance_train.jpg', bbox_inches='tight', dpi=150)
+
+explainer = shap.TreeExplainer(model, X_test)
+shap_values = explainer.shap_values(X_test)
+shap_mean  = np.abs(shap_values).mean(0)
+sorted_idx = shap_mean.argsort()
+
+plt.figure(figsize=(8,6), dpi=150)
+plt.barh(np.array(rfe.get_feature_names_out())[sorted_idx],
+         shap_mean[sorted_idx],
+         color='LightGreen')
+plt.ylabel(r'Descriptors', fontsize=18)
+plt.xlabel('SHAP value  \n [Average impact on model output magnitude]', fontsize=18)
+plt.grid('True')
+plt.box('True')
+plt.xticks(fontsize=18)
+plt.yticks(fontsize=18)
+plt.savefig(args.save_dir + '/shap_feature_importance_test.jpg', bbox_inches='tight', dpi=150)
 
 
 
