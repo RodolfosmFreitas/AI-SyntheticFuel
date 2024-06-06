@@ -22,3 +22,6 @@ the results showed that molecular connectivity indices play a role
 in the cetane number for aromatic molecules. Also, the methodology is extended
 to predict the cetane number of ester and ether molecules, leveraging
 the design of alternative fuels toward fully sustainable fuel utilization.
+
+# Citation
+@article{}
