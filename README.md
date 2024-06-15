@@ -25,10 +25,6 @@ the design of alternative fuels toward fully sustainable fuel utilization.
 
 # Citation
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
 @article{FREITAS2024100385, <br />
 title = {Descriptors-based machine-learning prediction of cetane number using quantitative structure–property relationship}, <br />
 journal = {Energy and AI}, <br />
@@ -39,3 +35,5 @@ doi = {https://doi.org/10.1016/j.egyai.2024.100385}, <br />
 url = {https://www.sciencedirect.com/science/article/pii/S266654682400051X}, <br />
 author = {Rodolfo S.M. Freitas and Xi Jiang}, <br />
 }
+```
+
