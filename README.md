@@ -24,6 +24,11 @@ to predict the cetane number of ester and ether molecules, leveraging
 the design of alternative fuels toward fully sustainable fuel utilization.
 
 # Citation
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 @article{FREITAS2024100385, <br />
 title = {Descriptors-based machine-learning prediction of cetane number using quantitative structure–property relationship}, <br />
 journal = {Energy and AI}, <br />
