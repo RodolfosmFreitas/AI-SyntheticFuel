@@ -25,13 +25,12 @@ the design of alternative fuels toward fully sustainable fuel utilization.
 
 # Citation
 @article{FREITAS2024100385, <br />
-title = {Descriptors-based machine-learning prediction of cetane number using quantitative structure–property relationship},
-journal = {Energy and AI},
-pages = {100385},
-year = {2024},
-issn = {2666-5468},
-doi = {https://doi.org/10.1016/j.egyai.2024.100385},
-url = {https://www.sciencedirect.com/science/article/pii/S266654682400051X},
-author = {Rodolfo S.M. Freitas and Xi Jiang},
-keywords = {Chemical descriptors, Quantitative structure-property relationship, Machine learning, Cetane number, Fuel design},
+title = {Descriptors-based machine-learning prediction of cetane number using quantitative structure–property relationship}, <br />
+journal = {Energy and AI}, <br />
+pages = {100385}, <br />
+year = {2024}, <br />
+issn = {2666-5468}, <br />
+doi = {https://doi.org/10.1016/j.egyai.2024.100385}, <br />
+url = {https://www.sciencedirect.com/science/article/pii/S266654682400051X}, <br />
+author = {Rodolfo S.M. Freitas and Xi Jiang}, <br />
 }
